@@ -4,9 +4,9 @@ mvp+retrofit2+rxjava  三合一使用
 
 mvp封装逐步嵌套加深
 
-（1）M--Model数据层，处理数据
-（2）V--View界面（视图）层，仅展示数据，不写逻辑（或者处理很少逻辑）
-（3）P--逻辑（控制）层，处理V与M之间的关系，作为一个桥梁作用
+（1）M--Model数据层，处理数据  
+（2）V--View界面（视图）层，仅展示数据，不写逻辑（或者处理很少逻辑）  
+（3）P--逻辑（控制）层，处理V与M之间的关系，作为一个桥梁作用  
 
 MVC中是允许Model和View进行交互的，而MVP中很明显，Model与View之间的交互由Presenter完成。还有一点就是Presenter与View之间的交互是通过接口的（代码中会体现)。
 
@@ -15,12 +15,12 @@ MVC中是允许Model和View进行交互的，而MVP中很明显，Model与View�
 
 步骤1：导入远程库
 
-implementation 'com.jakewharton:butterknife:10.2.1'
-annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+implementation 'com.jakewharton:butterknife:10.2.1'  
+annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'  
 
 步骤2：Activity和Fragment配置
 
-（1）创建时绑定：ButterKnife.bind(this);
+（1）创建时绑定：ButterKnife.bind(this);  
 （2）销毁时解绑： bind.unbind();
 
     private Unbinder bind;

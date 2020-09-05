@@ -77,7 +77,8 @@ annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
  EventBus.getDefault().post(MessageEvent.getInstance("消息内容"));
 
 接收  (该方法不可以在Fragmen里使用)  
- @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onGetMessage(MessageEvent message) {
-        tvResult.setText(message.message);
-    }
+
+     @Subscribe(threadMode = ThreadMode.MAIN)
+        public void onGetMessage(MessageEvent message) {
+            tvResult.setText(message.message);
+        }

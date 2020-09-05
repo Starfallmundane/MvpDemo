@@ -45,7 +45,8 @@ annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
         bind.unbind();
     }
     
-步骤3：剩余用法参考   https://blog.csdn.net/wen_haha/article/details/85878292
+步骤3：剩余用法参考博客    
+   https://blog.csdn.net/wen_haha/article/details/85878292
 
 
 ### android eventbus 基本使用步骤  发送消息   

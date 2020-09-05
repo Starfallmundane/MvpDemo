@@ -14,12 +14,10 @@ MVC中是允许Model和View进行交互的，而MVP中很明显，Model与View�
 ### android butterknife基本使用步骤
 
 步骤1：导入远程库
-
 implementation 'com.jakewharton:butterknife:10.2.1'  
 annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'  
 
 步骤2：Activity和Fragment配置
-
 （1）创建时绑定：ButterKnife.bind(this);  
 （2）销毁时解绑： bind.unbind();
 
@@ -47,3 +45,39 @@ annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     }
     
 步骤3：剩余用法参考   https://blog.csdn.net/wen_haha/article/details/85878292
+
+
+### android eventbus 基本使用步骤  发送消息
+
+步骤1：导入远程库  
+ implementation 'org.greenrobot:eventbus:3.2.0'
+
+步骤2：EventBus创建和销毁 
+ EventBus.getDefault().register(this); 
+ EventBus.getDefault().unregister(this);  
+ 
+步骤3：创建消息体，就是一个javaBean对象，如下，更具需求变化  
+ 
+    public class MessageEvent {
+ 
+         public final String message;
+     
+         public static MessageEvent getInstance(String message) {
+             return new MessageEvent(message);
+         }
+     
+         private MessageEvent(String message) {
+             this.message = message;
+         }
+   }
+   
+  
+步骤4：发送消息和接收消息  
+发送  
+ EventBus.getDefault().post(MessageEvent.getInstance("消息内容"));
+
+接收  
+ @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onGetMessage(MessageEvent message) {
+        tvResult.setText(message.message);
+    }

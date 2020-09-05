@@ -1,6 +1,5 @@
 package com.lx.mvpdemo;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -9,13 +8,17 @@ import com.lx.mvpdemo.base.BaseActivity;
 import com.lx.mvpdemo.bean.ArticleBean;
 import com.lx.mvpdemo.bean.BannerBrandBean;
 import com.lx.mvpdemo.contract.MainContract;
+import com.lx.mvpdemo.event.MessageEvent;
 import com.lx.mvpdemo.presenter.MainPresenter;
 import com.lx.mvpdemo.utils.ToastUtils;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity implements MainContract {
@@ -30,6 +33,7 @@ public class MainActivity extends BaseActivity implements MainContract {
     Button btDetails;
     private MainPresenter mPresenter;
     private int pageNumb = 1;
+    private int index=0;
 
     @Override
     protected int getLayoutResId() {
@@ -38,11 +42,11 @@ public class MainActivity extends BaseActivity implements MainContract {
 
     @Override
     protected void initView() {
-        //ButterKnife.bind(this);
+        EventBus.getDefault().register(this);
         mPresenter = new MainPresenter(this);
     }
 
-    @OnClick({R.id.bt_banner, R.id.bt_article,R.id.bt_details})
+    @OnClick({R.id.bt_banner, R.id.bt_article,R.id.bt_details,R.id.bt_eventbus})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_banner:
@@ -53,6 +57,10 @@ public class MainActivity extends BaseActivity implements MainContract {
                 break;
             case R.id.bt_details:
                 requestArticleDetailsNet();
+                break;
+            case R.id.bt_eventbus:
+                index++;
+                EventBus.getDefault().post(MessageEvent.getInstance("我是刘星"+index));
                 break;
         }
     }
@@ -121,4 +129,14 @@ public class MainActivity extends BaseActivity implements MainContract {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onGetMessage(MessageEvent message) {
+        tvResult.setText(message.message);
+    }
 }

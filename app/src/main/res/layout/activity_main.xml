@@ -36,6 +36,16 @@
         android:padding="15dp"
         android:text="网络请求数据--资讯详情(post，更高阶封装)" />
 
+    <Button
+        android:id="@+id/bt_eventbus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="eventbus发送数据" />
+
     <TextView
         android:id="@+id/tv_result"
         android:layout_width="wrap_content"
@@ -44,5 +54,6 @@
         android:text="请求结果："
         android:textColor="@color/text_black"
         android:textSize="16dp" />
+
 
 </LinearLayout>

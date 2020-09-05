@@ -49,5 +49,7 @@ dependencies {
 
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    //Android的事件发布-订阅总线
+    implementation 'org.greenrobot:eventbus:3.2.0'
 
 }

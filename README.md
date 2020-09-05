@@ -14,7 +14,7 @@ MVC中是允许Model和View进行交互的，而MVP中很明显，Model与View�
 
 ### android butterknife基本使用步骤
 
-步骤1：导入远程库
+步骤1：导入远程库   
 implementation 'com.jakewharton:butterknife:10.2.1'  
 annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'  
 
@@ -49,8 +49,9 @@ annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 
 
 ### android eventbus 基本使用步骤  发送消息   
-博客：https://www.jianshu.com/p/428a5257839c   
-      https://www.jianshu.com/p/e7d5c7bda783
+博客：   
+https://www.jianshu.com/p/428a5257839c   
+https://www.jianshu.com/p/e7d5c7bda783
 
 步骤1：导入远程库  
  implementation 'org.greenrobot:eventbus:3.2.0'

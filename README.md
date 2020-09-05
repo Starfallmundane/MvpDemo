@@ -52,8 +52,8 @@ annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 步骤1：导入远程库  
  implementation 'org.greenrobot:eventbus:3.2.0'
 
-步骤2：EventBus创建和销毁 
- EventBus.getDefault().register(this); 
+步骤2：EventBus创建和销毁   
+ EventBus.getDefault().register(this);   
  EventBus.getDefault().unregister(this);  
  
 步骤3：创建消息体，就是一个javaBean对象，如下，更具需求变化  
@@ -76,7 +76,7 @@ annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 发送  
  EventBus.getDefault().post(MessageEvent.getInstance("消息内容"));
 
-接收  
+接收  (该方法不可以在Fragmen里使用)  
  @Subscribe(threadMode = ThreadMode.MAIN)
     public void onGetMessage(MessageEvent message) {
         tvResult.setText(message.message);

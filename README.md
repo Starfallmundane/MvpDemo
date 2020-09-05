@@ -1,6 +1,7 @@
 
 ### android MVP基本封装框架
-mvp+retrofit2+rxjava  三合一使用
+mvp+retrofit2+rxjava  三合一使用   
+博客：http://www.jcodecraeer.com/a/anzhuokaifa/2017/1020/8625.html
 
 mvp封装逐步嵌套加深
 
@@ -47,7 +48,8 @@ annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 步骤3：剩余用法参考   https://blog.csdn.net/wen_haha/article/details/85878292
 
 
-### android eventbus 基本使用步骤  发送消息
+### android eventbus 基本使用步骤  发送消息   
+博客：https://www.jianshu.com/p/428a5257839c
 
 步骤1：导入远程库  
  implementation 'org.greenrobot:eventbus:3.2.0'

@@ -1,4 +1,4 @@
-package com.lx.mvpdemo.model;
+package com.lx.mvpdemo.model.impi;
 
 import com.lx.mvpdemo.lister.OnNetFinishedListener;
 

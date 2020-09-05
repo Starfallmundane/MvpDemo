@@ -32,6 +32,8 @@ public class MainPresenter {
         model=new MainModel();
     }
 
+
+    //轮播图网络请求：get
     public void getBannerData() {
         Observable<BaseResponse<BannerBrandBean>> observable = RetrofitUtils.initRetrofit().getBannerNet();
         observable.subscribeOn(Schedulers.io()).
@@ -65,6 +67,7 @@ public class MainPresenter {
                 );
     }
 
+    //文章列表的网络请求：Post
     public void getArticleData(int pageNum) {
         Map<String, RequestBody> map = new HashMap<>();
         map.put("pageNum", RequestBody.create(null, pageNum + ""));
@@ -90,12 +93,11 @@ public class MainPresenter {
         });
     }
 
+    //文章详情的网络请求：Post  （抽取了一个model）
     public void requestArticleDetailsNet(int articleID) {
         Map<String, RequestBody> map = new HashMap<>();
         map.put("newsId", RequestBody.create(null, articleID+""));
         model.getArticleDetailsData(map, new OnNetFinishedListener<ArticleBean>() {
-
-
 
             @Override
             public void onNetSuccess(ArticleBean data) {

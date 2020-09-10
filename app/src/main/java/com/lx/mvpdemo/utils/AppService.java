@@ -3,6 +3,8 @@ package com.lx.mvpdemo.utils;
 import com.lx.mvpdemo.bean.ArticleBean;
 import com.lx.mvpdemo.bean.BannerBrandBean;
 import com.lx.mvpdemo.bean.BaseResponse;
+import com.lx.mvpdemo.bean.BaseResponse2;
+import com.lx.mvpdemo.bean.UserBean;
 
 import java.util.List;
 import java.util.Map;
@@ -20,6 +22,14 @@ public interface AppService {
      */
     @POST("/kjzj_app/homePage/open/getBanner")
     Observable<BaseResponse<BannerBrandBean>> getBannerNet();
+
+    /**
+     * 登陆 http://182.254.174.100:8080/pintuan/user/login
+     */
+    @Multipart
+    @POST("/pintuan/user/login")
+    Observable<BaseResponse2<UserBean>> loginData(@PartMap Map<String, RequestBody> bodyMap);
+
 
     /**
      * 首页资讯列表

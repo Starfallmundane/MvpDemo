@@ -5,6 +5,8 @@ import android.util.Log;
 import com.lx.mvpdemo.bean.ArticleBean;
 import com.lx.mvpdemo.bean.BannerBrandBean;
 import com.lx.mvpdemo.bean.BaseResponse;
+import com.lx.mvpdemo.bean.BaseResponse2;
+import com.lx.mvpdemo.bean.UserBean;
 import com.lx.mvpdemo.contract.MainContract;
 import com.lx.mvpdemo.lister.OnNetFinishedListener;
 import com.lx.mvpdemo.model.MainModel;
@@ -65,6 +67,32 @@ public class MainPresenter {
                               }
                           }
                 );
+    }
+
+    //登陆：Post
+    public void loginData() {
+        Map<String, RequestBody> map = new HashMap<>();
+        map.put("phone", RequestBody.create(null,  "15736779999"));
+        map.put("password", RequestBody.create(null,  "123456"));
+        Observable<BaseResponse2<UserBean>> observable = RetrofitUtils.initRetrofit().loginData(map);
+        observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<BaseResponse2<UserBean>>() {
+
+            @Override
+            public void call(BaseResponse2<UserBean> baseResponse) {
+                if (baseResponse != null && baseResponse.isSuccess()) {
+                    Log.e("liuxing", "登陆--请求成功" + baseResponse.toString());
+                    mRootView.showLoginSuccess(baseResponse.getData());
+                } else {
+                    Log.e("liuxing", "登陆--服务器错误" + baseResponse.getMsg());
+                }
+            }
+
+        }, new Action1<Throwable>() {
+            @Override
+            public void call(Throwable throwable) {
+                Log.e("liuxing", "文章列表--请求失败" + throwable.toString());
+            }
+        });
     }
 
     //文章列表的网络请求：Post

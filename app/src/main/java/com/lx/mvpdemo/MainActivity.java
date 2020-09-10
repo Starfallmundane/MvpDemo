@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.lx.mvpdemo.base.BaseActivity;
 import com.lx.mvpdemo.bean.ArticleBean;
 import com.lx.mvpdemo.bean.BannerBrandBean;
+import com.lx.mvpdemo.bean.UserBean;
 import com.lx.mvpdemo.contract.MainContract;
 import com.lx.mvpdemo.event.MessageEvent;
 import com.lx.mvpdemo.presenter.MainPresenter;
@@ -27,6 +28,8 @@ public class MainActivity extends BaseActivity implements MainContract {
     Button btBanner;
     @BindView(R.id.bt_article)
     Button btArticle;
+    @BindView(R.id.bt_login)
+    Button btLogin;
     @BindView(R.id.tv_result)
     TextView tvResult;
     @BindView(R.id.bt_details)
@@ -46,7 +49,7 @@ public class MainActivity extends BaseActivity implements MainContract {
         mPresenter = new MainPresenter(this);
     }
 
-    @OnClick({R.id.bt_banner, R.id.bt_article,R.id.bt_details,R.id.bt_eventbus})
+    @OnClick({R.id.bt_banner, R.id.bt_article,R.id.bt_login,R.id.bt_details,R.id.bt_eventbus})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_banner:
@@ -54,6 +57,9 @@ public class MainActivity extends BaseActivity implements MainContract {
                 break;
             case R.id.bt_article:
                 requestArticleNet();
+                break;
+            case R.id.bt_login:
+                requestLoginNet();
                 break;
             case R.id.bt_details:
                 requestArticleDetailsNet();
@@ -63,6 +69,10 @@ public class MainActivity extends BaseActivity implements MainContract {
                 EventBus.getDefault().post(MessageEvent.getInstance("我是刘星"+index));
                 break;
         }
+    }
+
+    private void requestLoginNet() {
+        mPresenter.loginData();
     }
 
     //调用P层，请求轮播图数据
@@ -98,6 +108,12 @@ public class MainActivity extends BaseActivity implements MainContract {
     public void showArticleDataSuccess(List<ArticleBean> data) {
         tvResult.setTextColor(getResources().getColor(R.color.green));
         tvResult.setText("请求文章列表数据成功：\n" + data.toString());
+    }
+
+    @Override
+    public void showLoginSuccess(UserBean data) {
+        tvResult.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        tvResult.setText("请求登陆数据成功：\n" + data.toString());
     }
 
     /**

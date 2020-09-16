@@ -27,6 +27,16 @@
         android:text="网络请求数据--资讯列表(post)" />
 
     <Button
+        android:id="@+id/bt_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="网络请求数据--登陆(post)" />
+
+    <Button
         android:id="@+id/bt_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

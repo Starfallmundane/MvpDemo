@@ -74,7 +74,7 @@ https://www.jianshu.com/p/e7d5c7bda783
          private MessageEvent(String message) {
              this.message = message;
          }
-   }
+    }
    
   
 步骤4：发送消息和接收消息  
@@ -113,7 +113,7 @@ https://www.cnblogs.com/zhangqie/p/6398247.html
          private MessageEvent(String message) {
              this.message = message;
          }
-   }
+      }
    
   
 步骤4：发送消息和接收消息  

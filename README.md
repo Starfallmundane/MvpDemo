@@ -49,7 +49,7 @@ annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
    https://blog.csdn.net/wen_haha/article/details/85878292
 
 
-### 三、android eventbus 基本使用步骤  发送消息   
+### 三、android eventbus 基本使用步骤  发送消息   （不不不不不不不不可以在Fragment使用）
 博客：   
 https://www.jianshu.com/p/428a5257839c   
 https://www.jianshu.com/p/e7d5c7bda783
@@ -89,7 +89,7 @@ https://www.jianshu.com/p/e7d5c7bda783
         }
         
         
-### 四、android androideventbus 基本使用步骤  发送消息   
+### 四、android androideventbus 基本使用步骤  发送消息   （可以在Fragment使用）
 博客：   
 https://www.cnblogs.com/zhangqie/p/6398247.html  
 

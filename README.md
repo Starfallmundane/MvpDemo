@@ -120,7 +120,7 @@ https://www.cnblogs.com/zhangqie/p/6398247.html
 发送  
   EventBus.getDefault().post(MessageEvent.getInstance("消息内容"), "liuxing");
 
-接收  (该方法不可以在Fragmen里使用)  
+接收  (该方法可以可以可以在Fragmen里使用)  
 
       @Subscriber(tag = "liuxing")
          private void updateDataWithTag(MessageEvent message) {

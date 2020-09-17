@@ -118,11 +118,11 @@ https://www.cnblogs.com/zhangqie/p/6398247.html
   
 步骤4：发送消息和接收消息  
 发送  
- EventBus.getDefault().post(MessageEvent.getInstance("消息内容"));
+  EventBus.getDefault().post(MessageEvent.getInstance("消息内容"), "liuxing");
 
 接收  (该方法不可以在Fragmen里使用)  
 
-      @Subscriber(tag = "mytag_communicate_changeanswer")
+      @Subscriber(tag = "liuxing")
          private void updateDataWithTag(MessageEvent message) {
              if (message != null) {
                  Log.e("liuxing","我接收的数据"+message.toString());

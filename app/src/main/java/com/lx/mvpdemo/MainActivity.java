@@ -49,7 +49,7 @@ public class MainActivity extends BaseActivity implements MainContract {
         mPresenter = new MainPresenter(this);
     }
 
-    @OnClick({R.id.bt_banner, R.id.bt_article,R.id.bt_login,R.id.bt_details,R.id.bt_eventbus})
+    @OnClick({R.id.bt_banner, R.id.bt_article,R.id.bt_login,R.id.bt_details,R.id.bt_eventbus,R.id.bt_bigpic})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_banner:
@@ -67,6 +67,9 @@ public class MainActivity extends BaseActivity implements MainContract {
             case R.id.bt_eventbus:
                 index++;
                 EventBus.getDefault().post(MessageEvent.getInstance("我是刘星"+index));
+                break;
+            case R.id.bt_bigpic:
+                
                 break;
         }
     }

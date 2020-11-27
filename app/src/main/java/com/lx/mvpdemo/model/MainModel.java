@@ -26,7 +26,7 @@ public class MainModel implements MainModelImpi {
                     @Override
                     public void call(BaseResponse<ArticleBean> baseResponse) {
                         if (baseResponse != null && baseResponse.isSuccess()) {
-                            Log.e("liuxing", "文章详情--请求成功" + baseResponse.toString());
+//                            Log.e("liuxing", "文章详情--请求成功" + baseResponse.toString());
                             if (baseResponse.getData() != null) {
                                 listener.onNetSuccess(baseResponse.getData());
                             } else {
@@ -34,14 +34,14 @@ public class MainModel implements MainModelImpi {
                             }
                         } else {
                             listener.onNetError(true, false);
-                            Log.e("liuxing", "文章详情--服务器错误" + baseResponse.getMsg());
+//                            Log.e("liuxing", "文章详情--服务器错误" + baseResponse.getMsg());
                         }
                     }
 
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
-                        Log.e("liuxing", "文章详情--请求失败" + throwable.toString());
+//                        Log.e("liuxing", "文章详情--请求失败" + throwable.toString());
                         listener.onNetError(true, false);
                     }
                 });

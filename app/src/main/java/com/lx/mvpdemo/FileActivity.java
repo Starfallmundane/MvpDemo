@@ -68,6 +68,7 @@ public class FileActivity extends BaseActivity implements FileContract {
                 ActivityCompat.requestPermissions(this, new String[]{permissionType}, code);
             } else {
                 ToastUtils.showToast(this, "权限已申请");
+                //权限申请好了，开始执行自己的逻辑
                 if (code==PERMISSIONS_CODE1) {       //选择图片
                     selectPicture();
                 } else if (code==PERMISSIONS_CODE2) {       //下载
@@ -81,14 +82,14 @@ public class FileActivity extends BaseActivity implements FileContract {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
 
-        if (requestCode == PERMISSIONS_CODE1) {
+        if (requestCode == PERMISSIONS_CODE1) {     //读取权限
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 ToastUtils.showToast(this, "读取权限已申请");
                 selectPicture();
             } else {
                 ToastUtils.showToast(this, "读取权限已拒绝");
             }
-        }else if (requestCode == PERMISSIONS_CODE2) {
+        }else if (requestCode == PERMISSIONS_CODE2) {     //写入权限
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 ToastUtils.showToast(this, "写入权限已申请");
                 downFile();

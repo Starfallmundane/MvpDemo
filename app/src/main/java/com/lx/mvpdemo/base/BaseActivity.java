@@ -13,6 +13,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     private ProgressDialog progress;
     private Unbinder bind;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

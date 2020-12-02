@@ -97,6 +97,7 @@ dependencies {
     implementation 'io.reactivex:rxjava:1.3.0'      //RxJava 的异步实现，是通过一种扩展的观察者模式来实现的
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+//    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.7.2'
 
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'

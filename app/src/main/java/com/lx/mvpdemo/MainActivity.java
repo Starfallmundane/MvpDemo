@@ -1,5 +1,6 @@
 package com.lx.mvpdemo;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,7 +37,7 @@ public class MainActivity extends BaseActivity implements MainContract {
     Button btDetails;
     private MainPresenter mPresenter;
     private int pageNumb = 1;
-    private int index=0;
+    private int index = 0;
 
     @Override
     protected int getLayoutResId() {
@@ -49,7 +50,8 @@ public class MainActivity extends BaseActivity implements MainContract {
         mPresenter = new MainPresenter(this);
     }
 
-    @OnClick({R.id.bt_banner, R.id.bt_article,R.id.bt_login,R.id.bt_details,R.id.bt_eventbus,R.id.bt_bigpic})
+    @OnClick({R.id.bt_banner, R.id.bt_article, R.id.bt_login, R.id.bt_details, R.id.bt_eventbus,
+             R.id.bt_bigpic, R.id.bt_file})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_banner:
@@ -66,10 +68,14 @@ public class MainActivity extends BaseActivity implements MainContract {
                 break;
             case R.id.bt_eventbus:
                 index++;
-                EventBus.getDefault().post(MessageEvent.getInstance("我是刘星"+index));
+                EventBus.getDefault().post(MessageEvent.getInstance("我是刘星" + index));
                 break;
             case R.id.bt_bigpic:
-                
+
+                break;
+            case R.id.bt_file:       //跳转
+                startActivity(new Intent(MainActivity.this, FileActivity.class));
+
                 break;
         }
     }

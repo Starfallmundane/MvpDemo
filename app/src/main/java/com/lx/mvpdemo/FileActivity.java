@@ -99,7 +99,12 @@ public class FileActivity extends BaseActivity implements FileContract {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
+    /**
+     * 下载文件
+     */
     private void downFile() {
+        //文件地址，文件可以是图片，安装包啥都行
+        //如果是安装包，下载完成，还可以调用系统安装apk代码，就是所谓的版本升级下载安装步骤
         String downurl="http://47.100.44.106/app/kjzj-v0.0.2.apk";
         mPresenter.downloadFileNet(downurl);
     }

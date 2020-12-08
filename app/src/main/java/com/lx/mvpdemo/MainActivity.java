@@ -12,6 +12,8 @@ import com.lx.mvpdemo.bean.UserBean;
 import com.lx.mvpdemo.contract.MainContract;
 import com.lx.mvpdemo.event.MessageEvent;
 import com.lx.mvpdemo.presenter.MainPresenter;
+import com.lx.mvpdemo.ui.FileActivity;
+import com.lx.mvpdemo.ui.ListActivity;
 import com.lx.mvpdemo.utils.ToastUtils;
 
 import org.greenrobot.eventbus.EventBus;
@@ -51,7 +53,7 @@ public class MainActivity extends BaseActivity implements MainContract {
     }
 
     @OnClick({R.id.bt_banner, R.id.bt_article, R.id.bt_login, R.id.bt_details, R.id.bt_eventbus,
-             R.id.bt_bigpic, R.id.bt_file})
+             R.id.bt_bigpic, R.id.bt_file,R.id.bt_list})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_banner:
@@ -75,6 +77,10 @@ public class MainActivity extends BaseActivity implements MainContract {
                 break;
             case R.id.bt_file:       //跳转
                 startActivity(new Intent(MainActivity.this, FileActivity.class));
+
+                break;
+            case R.id.bt_list:       //跳转
+                startActivity(new Intent(MainActivity.this, ListActivity.class));
 
                 break;
         }

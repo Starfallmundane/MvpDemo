@@ -1,4 +1,4 @@
-package com.lx.mvpdemo;
+package com.lx.mvpdemo.ui;
 
 import android.Manifest;
 import android.app.Activity;
@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.lx.mvpdemo.R;
 import com.lx.mvpdemo.base.BaseActivity;
 import com.lx.mvpdemo.contract.FileContract;
 import com.lx.mvpdemo.presenter.FilePresenter;
@@ -81,7 +82,6 @@ public class FileActivity extends BaseActivity implements FileContract {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-
         if (requestCode == PERMISSIONS_CODE1) {     //读取权限
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 ToastUtils.showToast(this, "读取权限已申请");
@@ -104,7 +104,7 @@ public class FileActivity extends BaseActivity implements FileContract {
      * 下载文件
      */
     private void downFile() {
-        //文件地址，文件可以是图片，安装包啥都行
+        //文件地址，文件可以是图片视频，安装包等等啥文件都行
         //如果是安装包，下载完成，还可以调用系统安装apk代码，就是所谓的版本升级下载安装步骤
         String downurl="http://47.100.44.106/app/kjzj-v0.0.2.apk";
         mPresenter.downloadFileNet(downurl);

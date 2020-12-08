@@ -117,5 +117,17 @@
         android:padding="15dp"
         android:text="文件上传和下载" />
 
+    <Button
+        android:id="@+id/bt_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:background="@color/red"
+        android:padding="15dp"
+        android:text="列表刷新和加载更多" />
 
 </LinearLayout>

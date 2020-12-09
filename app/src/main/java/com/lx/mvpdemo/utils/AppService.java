@@ -4,6 +4,8 @@ import com.lx.mvpdemo.bean.ArticleBean;
 import com.lx.mvpdemo.bean.BannerBrandBean;
 import com.lx.mvpdemo.bean.BaseResponse;
 import com.lx.mvpdemo.bean.BaseResponse2;
+import com.lx.mvpdemo.bean.BaseResponse3;
+import com.lx.mvpdemo.bean.ReportBean;
 import com.lx.mvpdemo.bean.UserBean;
 
 import java.util.List;
@@ -47,6 +49,10 @@ public interface AppService {
     @Multipart
     @POST("/kjzj_app/news/open/selectNewsDetails")
     Observable<BaseResponse<ArticleBean>> getArticleDetailsNet(@PartMap Map<String, RequestBody> bodyMap);
+
+    @Multipart
+    @POST("/Home/Index/reportTaskInfo")
+    Observable<BaseResponse3<ReportBean>> getReportNet(@PartMap Map<String, RequestBody> bodyMap);
 
 
     /**

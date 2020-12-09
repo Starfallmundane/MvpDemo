@@ -129,4 +129,13 @@ https://www.cnblogs.com/zhangqie/p/6398247.html
      
              }
          }
+         
+         
+### 五、解析数据
+关于gson数据解析的两种形式：
+//  json的字符串数据解析成JavaBean对象
+ XxxxBean bean = new Gson().fromJson(response, XxxxBean.class);
+//  json的字符串数据解析成List集合
+ Type listType = new TypeToken<ArrayList<XxxxBean>>() {}.getType(); // TypeToken是一个空的抽象类                 
+ArrayList<XxxxBean>  list = new Gson().fromJson(data, listType);
      

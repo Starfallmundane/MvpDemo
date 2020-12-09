@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.TimeActivity"></activity>
+        <activity android:name=".ui.ReportActivity"></activity>
+        <activity android:name=".ui.TimeActivity" />
         <activity android:name=".ui.HuiActivity" />
         <activity android:name=".ui.ListActivity" />
         <activity android:name=".ui.FileActivity" />

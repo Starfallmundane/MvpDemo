@@ -16,6 +16,7 @@ import com.lx.mvpdemo.presenter.MainPresenter;
 import com.lx.mvpdemo.ui.FileActivity;
 import com.lx.mvpdemo.ui.HuiActivity;
 import com.lx.mvpdemo.ui.ListActivity;
+import com.lx.mvpdemo.ui.ReportActivity;
 import com.lx.mvpdemo.ui.TimeActivity;
 import com.lx.mvpdemo.utils.ToastUtils;
 
@@ -92,6 +93,10 @@ public class MainActivity extends BaseActivity implements MainContract {
                 break;
             case R.id.bt_time:       //倒计时
                 startActivity(new Intent(MainActivity.this, TimeActivity.class));
+
+                break;
+            case R.id.bt_report:       //倒计时
+                startActivity(new Intent(MainActivity.this, ReportActivity.class));
 
                 break;
         }

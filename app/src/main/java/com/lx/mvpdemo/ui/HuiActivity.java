@@ -35,18 +35,17 @@ public class HuiActivity extends BaseActivity {
         banner.setAdapter(bannerHomeAdapter);
 
         //添加画廊效果
-        banner.setBannerGalleryEffect(140, 10);
+        banner.setBannerGalleryEffect(135, 20);
+        banner.isAutoLoop(false);
 
         banner.addOnPageChangeListener(new OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 Log.e("liuxing","onPageScrolled==="+position);
-//                bannerHomeAdapter.setSelect(position);
             }
 
             @Override
             public void onPageSelected(int position) {
-
                 Log.e("liuxing","onPageSelected==="+position);
             }
 

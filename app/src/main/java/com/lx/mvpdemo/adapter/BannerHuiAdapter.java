@@ -39,17 +39,10 @@ public class BannerHuiAdapter extends BannerAdapter<HuiBean, BannerHuiHolder> {
     @Override
     public void onBindView(BannerHuiHolder holder, HuiBean item, int position, int size) {
         holder.tv_item_hui_name.setText(item.getName());
-        if (position==index){
+        if (position<5){
             holder.tv_item_hui_name.setBackgroundResource(R.drawable.orange_cir_11);
         }else{
             holder.tv_item_hui_name.setBackgroundResource(R.drawable.gray_cir_11);
         }
-    }
-
-    private int index;
-
-    public void setSelect(int selectposition) {
-        index=selectposition;
-//        this.notifyDataSetChanged();
     }
 }

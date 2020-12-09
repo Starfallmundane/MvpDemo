@@ -30,6 +30,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+
     // 修改打包的apk的名字
     android.applicationVariants.all { variant ->
         variant.outputs.all { output ->
@@ -103,5 +104,9 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     //Android的事件发布-订阅总线
     implementation 'org.greenrobot:eventbus:3.2.0'
+    //轮播图
+    implementation 'com.youth.banner:banner:2.0.10'
+    //倒计时
+    implementation 'com.github.iwgang:countdownview:2.1.6'
 
 }

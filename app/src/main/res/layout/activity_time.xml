@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    tools:context=".ui.TimeActivity">
+
+    <cn.iwgang.countdownview.CountdownView
+        android:id="@+id/cv_convertDaysToHours1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        app:isConvertDaysToHours="true"
+        app:isShowDay="false"
+        app:isShowHour="true"
+        app:isShowMillisecond="true"
+        app:isShowMinute="true"
+        app:isShowSecond="true"
+        app:isTimeTextBold="true"
+        app:suffixDay="天"
+        app:suffixGravity="bottom"
+        app:suffixHour="小时"
+        app:suffixMillisecond="毫秒"
+        app:suffixMinute="分钟"
+        app:suffixSecond="秒"
+        app:suffixTextColor="#000000"
+        app:suffixTextSize="12sp"
+        app:timeTextColor="#000000"
+        app:timeTextSize="22sp"/>
+
+
+    <cn.iwgang.countdownview.CountdownView
+        android:id="@+id/cv_convertDaysToHours2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        app:isConvertDaysToHours="true"
+        app:isShowDay="false"
+        app:isShowHour="true"
+        app:isShowMinute="true"
+        app:isShowSecond="false"
+        app:isTimeTextBold="true"
+        app:suffixDay="天"
+        app:suffixGravity="bottom"
+        app:suffixHour="小时"
+        app:suffixMinute="分钟"
+        app:suffixSecond="秒"
+        app:suffixTextColor="#000000"
+        app:suffixTextSize="12dp"
+        app:timeTextColor="#000000"
+        app:timeTextSize="22dp"/>
+</LinearLayout>

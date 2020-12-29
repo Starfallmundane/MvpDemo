@@ -5,7 +5,9 @@ import com.lx.mvpdemo.bean.BannerBrandBean;
 import com.lx.mvpdemo.bean.BaseResponse;
 import com.lx.mvpdemo.bean.BaseResponse2;
 import com.lx.mvpdemo.bean.BaseResponse3;
+import com.lx.mvpdemo.bean.BaseResponse4;
 import com.lx.mvpdemo.bean.ReportBean;
+import com.lx.mvpdemo.bean.User2Bean;
 import com.lx.mvpdemo.bean.UserBean;
 
 import java.util.List;
@@ -68,4 +70,13 @@ public interface AppService {
     @Streaming //大文件时要加不然会OOM
     @GET
     Observable<ResponseBody> downloadFile(@Url String fileUrl);
+
+
+    @Multipart
+    @POST("/api/no-login/dologin")
+    Observable<BaseResponse4<User2Bean>> loginNet(@PartMap Map<String, RequestBody> bodyMap);
+
+    @Multipart
+    @POST("/api/no-login/islogin")
+    Observable<BaseResponse4<User2Bean>> isloginNet(@PartMap Map<String, RequestBody> bodyMap);
 }

@@ -14,6 +14,7 @@ import com.lx.mvpdemo.contract.MainContract;
 import com.lx.mvpdemo.event.MessageEvent;
 import com.lx.mvpdemo.presenter.MainPresenter;
 import com.lx.mvpdemo.ui.FileActivity;
+import com.lx.mvpdemo.ui.HeaderActivity;
 import com.lx.mvpdemo.ui.HuiActivity;
 import com.lx.mvpdemo.ui.ListActivity;
 import com.lx.mvpdemo.ui.ReportActivity;
@@ -57,7 +58,7 @@ public class MainActivity extends BaseActivity implements MainContract {
     }
 
     @OnClick({R.id.bt_banner, R.id.bt_article, R.id.bt_login, R.id.bt_details, R.id.bt_eventbus,
-            R.id.bt_bigpic, R.id.bt_file, R.id.bt_list, R.id.bt_huiyuan,R.id.bt_time})
+            R.id.bt_bigpic, R.id.bt_file, R.id.bt_list, R.id.bt_huiyuan,R.id.bt_time,R.id.bt_header})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_banner:
@@ -97,6 +98,10 @@ public class MainActivity extends BaseActivity implements MainContract {
                 break;
             case R.id.bt_report:       //倒计时
                 startActivity(new Intent(MainActivity.this, ReportActivity.class));
+
+                break;
+            case R.id.bt_header:       //测试cookie
+                startActivity(new Intent(MainActivity.this, HeaderActivity.class));
 
                 break;
         }
